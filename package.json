@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@hazae41/pendule",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Mnemonic derivation (BIP-39, Monero) for TypeScript",
   "repository": "github:hazae41/pendule",
   "author": "hazae41",
