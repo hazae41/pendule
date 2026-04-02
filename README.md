@@ -12,7 +12,7 @@ npm install @hazae41/pendule
 
 ### Current features
 - 100% TypeScript and ESM
-- No external dependencies
+- Minimal dependencies
 - SHA-1 TOTP
 
 ## Usage
