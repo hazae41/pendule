@@ -1,0 +1,35 @@
+{
+  "type": "module",
+  "name": "@hazae41/pendule",
+  "version": "0.0.0",
+  "description": "Mnemonic derivation (BIP-39, Monero) for TypeScript",
+  "repository": "github:hazae41/pendule",
+  "author": "hazae41",
+  "scripts": {
+    "examine": "deno lint ./src && deno check ./src && deno test -RW ./src",
+    "prepack": "rm -rf ./out && tsc && tscousin"
+  },
+  "files": [
+    "./out"
+  ],
+  "exports": {
+    ".": {
+      "types": "./out/mod.d.ts",
+      "import": "./out/mod.js"
+    }
+  },
+  "devDependencies": {
+    "@hazae41/phobos": "^2.0.16",
+    "@hazae41/tscousin": "^1.0.28",
+    "@types/node": "^25.0.3",
+    "deno": "^2.6.3",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "typescript",
+    "esmodules"
+  ],
+  "dependencies": {
+    "@scure/base": "^2.0.0"
+  }
+}
