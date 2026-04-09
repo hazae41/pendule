@@ -1,4 +1,4 @@
-import { Url } from "@/libs/mod.ts";
+import { Url } from "@/libs/url/mod.ts";
 import { base32 } from "@scure/base";
 
 export class Sha1Totp {
