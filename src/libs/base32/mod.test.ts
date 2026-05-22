@@ -3,7 +3,7 @@ import { assert, test } from "@hazae41/phobos";
 
 test("base32 random", async () => {
   for (let i = 0; i < 1024; i++) {
-    const length = crypto.getRandomValues(new Uint8Array(1))[0] + 1
+    const length = crypto.getRandomValues(new Uint8Array(1))[0]
 
     const sourced = crypto.getRandomValues(new Uint8Array(length))
 
@@ -22,6 +22,17 @@ test("base32 random", async () => {
       throw error
     }
   }
+})
+
+test("base32 #0", async () => {
+  const sourced = new Uint8Array(0)
+
+  const encoded = base32.encode(sourced)
+  const decoded = base32.decode(encoded)
+
+  assert(encoded === "")
+
+  assert(sourced.toHex() === decoded.toHex())
 })
 
 test("base32 #1", async () => {
