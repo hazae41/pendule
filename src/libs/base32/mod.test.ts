@@ -1,16 +1,26 @@
 import { base32 } from "@/libs/base32/mod.ts";
 import { assert, test } from "@hazae41/phobos";
 
-test("base32 #0", async () => {
-  for (let i = 0; i < 16; i++) {
-    const length = crypto.getRandomValues(new Uint8Array(1))[0]
+test("base32 random", async () => {
+  for (let i = 0; i < 1024; i++) {
+    const length = crypto.getRandomValues(new Uint8Array(1))[0] + 1
 
     const sourced = crypto.getRandomValues(new Uint8Array(length))
 
     const encoded = base32.encode(sourced)
     const decoded = base32.decode(encoded)
 
-    assert(sourced.toHex() === decoded.toHex())
+    try {
+      assert(sourced.toHex() === decoded.toHex())
+    } catch (error) {
+      console.debug(sourced.toHex())
+
+      console.debug(encoded)
+
+      console.debug(decoded.toHex())
+
+      throw error
+    }
   }
 })
 
