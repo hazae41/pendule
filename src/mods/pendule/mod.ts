@@ -1,5 +1,5 @@
-import { base32 } from "@/libs/base32/mod.ts";
 import { Url } from "@/libs/url/mod.ts";
+import { base32 } from "@hazae41/base32";
 
 export class Sha1Totp {
 

@@ -28,5 +28,8 @@
   "keywords": [
     "typescript",
     "esmodules"
-  ]
+  ],
+  "dependencies": {
+    "@hazae41/base32": "^1.0.0"
+  }
 }
