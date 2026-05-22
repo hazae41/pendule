@@ -1,7 +1,7 @@
 import { base32 } from "@/libs/base32/mod.ts";
 import { assert, test } from "@hazae41/phobos";
 
-test("random encode decode", async () => {
+test("base32 #0", async () => {
   for (let i = 0; i < 16; i++) {
     const length = crypto.getRandomValues(new Uint8Array(1))[0]
 
@@ -14,7 +14,7 @@ test("random encode decode", async () => {
   }
 })
 
-test("#1", async () => {
+test("base32 #1", async () => {
   const sourced = Uint8Array.fromHex("DEADBEEF")
 
   const encoded = base32.encode(sourced)
@@ -25,7 +25,7 @@ test("#1", async () => {
   assert(sourced.toHex() === decoded.toHex())
 })
 
-test("#2", async () => {
+test("base32 #2", async () => {
   const sourced = Uint8Array.fromHex("FFFFFFFFFF")
 
   const encoded = base32.encode(sourced)
@@ -36,7 +36,7 @@ test("#2", async () => {
   assert(sourced.toHex() === decoded.toHex())
 })
 
-test("#3", async () => {
+test("base32 #3", async () => {
   const sourced = Uint8Array.fromHex("0000000000")
 
   const encoded = base32.encode(sourced)
@@ -47,7 +47,7 @@ test("#3", async () => {
   assert(sourced.toHex() === decoded.toHex())
 })
 
-test("#3", async () => {
+test("base32 #4", async () => {
   const sourced = Uint8Array.fromHex("d8dA6BF26964aF9D7eEd9e03E53415D37aA96045")
 
   const encoded = base32.encode(sourced)
