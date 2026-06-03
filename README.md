@@ -22,13 +22,13 @@ npm install @hazae41/pendule
 Parse generator secret
 
 ```tsx
-const totp = Sha1Totp.parseOrThrow("JBSWY3DPEHPK3PXP")
+const totp = Sha1Totp.parse("JBSWY3DPEHPK3PXP")
 ```
 
 Parse generator url
 
 ```tsx
-const totp = Sha1Totp.parseOrThrow("otpauth://totp/?secret=AAAABBBB22223333YYYYZZZZ66667777")
+const totp = Sha1Totp.parse("otpauth://totp/?secret=AAAABBBB22223333YYYYZZZZ66667777")
 ```
 
 ### Codes

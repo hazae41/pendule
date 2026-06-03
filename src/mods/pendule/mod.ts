@@ -11,13 +11,13 @@ export class Sha1Totp {
 
   static parseOrNull(text: string) {
     try {
-      return this.parseOrThrow(text)
+      return this.parse(text)
     } catch {
       return
     }
   }
 
-  static parseOrThrow(text: string) {
+  static parse(text: string) {
     const url = Url.parseOrNull(text)
 
     if (url == null)
